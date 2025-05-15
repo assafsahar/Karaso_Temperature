@@ -236,7 +236,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4655a20f6f0e6f489936acba560cc3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rainbow: {fileID: 0}
 --- !u!1001 &439443361
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -730,12 +729,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -1036435091415755448, guid: 7d6db3726efb4ad4d9d8bccd2733dff9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 7d6db3726efb4ad4d9d8bccd2733dff9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 12.12, y: 12.12}
+  m_Size: {x: 19.2, y: 19.2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
