@@ -236,6 +236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4655a20f6f0e6f489936acba560cc3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  circle: {fileID: 8278707551839389230, guid: 1376cff84bc757d4d8c3c3e0f2762035, type: 3}
 --- !u!1001 &439443361
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -270,7 +271,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3935048240511546617, guid: f3053857dd0e9a849928eeb1ecfe0fc2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: StartMeteorite
+      value: StartAnim
       objectReference: {fileID: 0}
     - target: {fileID: 3935048240511546617, guid: f3053857dd0e9a849928eeb1ecfe0fc2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -500,7 +501,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 214.22, y: 116.42391, z: 116.42391}
+  m_LocalScale: {x: 8, y: 4.347826, z: 4.347826}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -749,8 +750,8 @@ Transform:
   m_GameObject: {fileID: 1333054201}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -357, y: 11, z: 0}
-  m_LocalScale: {x: 29.5, y: 29.5, z: 29.5}
+  m_LocalPosition: {x: -9.5, y: -0.8, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -1093,12 +1094,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 7067451409965947605, guid: 0fdf733718f6e6b458dbcd438df89875, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0fdf733718f6e6b458dbcd438df89875, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 19.2, y: 12.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -1114,7 +1115,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 42.38, y: 42.38, z: 42.38}
+  m_LocalScale: {x: 1.04, y: 1.04, z: 1.04}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -1131,7 +1132,6 @@ GameObject:
   - component: {fileID: 2048626123}
   - component: {fileID: 2048626122}
   - component: {fileID: 2048626121}
-  - component: {fileID: 2048626125}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -1226,7 +1226,7 @@ Camera:
   far clip plane: 1000
   field of view: 86
   orthographic: 1
-  orthographic size: 216.46
+  orthographic size: 5.52
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -1257,21 +1257,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2048626125
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2048626120}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 453cf92524b557343917fc262181d73f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animationSpriteRenderer: {fileID: 0}
-  bgSpriteRenderer: {fileID: 1809530437}
-  mainCamera: {fileID: 2048626123}
 --- !u!1 &2100174282
 GameObject:
   m_ObjectHideFlags: 0

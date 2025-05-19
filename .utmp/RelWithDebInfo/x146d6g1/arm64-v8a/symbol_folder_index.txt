@@ -1,0 +1,1 @@
+D:\Programming\Unity Playground\Karaso_Temperature\Library\Bee\Android\Prj\IL2CPP\Gradle\unityLibrary\build\intermediates\cxx\RelWithDebInfo\x146d6g1\obj\arm64-v8a

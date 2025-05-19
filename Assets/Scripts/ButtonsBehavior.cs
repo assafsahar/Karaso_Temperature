@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class ButtonsBehavior : MonoBehaviour
 {
+    [SerializeField] GameObject circle;
     Animator animator;
 
     private void Awake()
@@ -11,7 +12,7 @@ public class ButtonsBehavior : MonoBehaviour
     }
     public void StartAnim()
     {
-        
+        Instantiate(circle);
     }
 
 }
