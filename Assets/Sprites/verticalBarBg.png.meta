@@ -1,10 +1,7 @@
 fileFormatVersion: 2
-guid: 7d6db3726efb4ad4d9d8bccd2733dff9
+guid: a83b5fbd92799d14d8cfb0500afb9f46
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: -1036435091415755448
-    second: 4fE-Sun_PNG_Template_Transparent_Background_V1_0
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -139,13 +136,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 4fE-Sun_PNG_Template_Transparent_Background_V1_0
+      name: BG + sun_0
       rect:
         serializedVersion: 2
-        x: 354
-        y: 354
-        width: 1212
-        height: 1212
+        x: 0
+        y: 0
+        width: 1920
+        height: 1081
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -154,8 +151,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 8451a6f86c7dd91f0800000000000000
-      internalID: -1036435091415755448
+      spriteID: fe927a8539f8937f0800000000000000
+      internalID: -632316409658529297
       vertices: []
       indices: 
       edges: []
@@ -174,7 +171,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      4fE-Sun_PNG_Template_Transparent_Background_V1_0: -1036435091415755448
+      BG + sun_0: -632316409658529297
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
