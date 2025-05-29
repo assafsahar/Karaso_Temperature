@@ -211,7 +211,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &50568268
 RectTransform:
   m_ObjectHideFlags: 0
@@ -251,8 +251,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uFE97\uFEA4\uFED8\uFED8\uFEEE\uFE8D \uFEE3\uFEE6 \uFEA9\uFEAD\uFE9F\uFE94
-    \uFEA3\uFEAE\uFE8D\uFEAD\uFE93 \uFE8D\uFEDF\uFEB8\uFEE4\uFEB2"
+  m_text: "\uFE8D\uFED3\uFEA4\uFEBC\uFEEE\uFE8D \uFEA9\uFEAD\uFE9F\uFE94 \uFE8D\uFEDF\uFEA4\uFEAE\uFE8D\uFEAD\uFE93
+    \uFECB\uFEE0\uFEF0 \uFE8D\uFEDF\uFEB8\uFEE4\uFEB2"
   m_isRightToLeft: 1
   m_fontAsset: {fileID: 11400000, guid: 711531e9f52bd1144979cdf45a11edc4, type: 2}
   m_sharedMaterial: {fileID: -6765579830617414206, guid: 711531e9f52bd1144979cdf45a11edc4, type: 2}
@@ -325,8 +325,8 @@ MonoBehaviour:
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
   preserveNumbers: 0
   farsi: 1
-  originalText: "\u062A\u062D\u0642\u0642\u0648\u0627 \u0645\u0646 \u062F\u0631\u062C\u0629
-    \u062D\u0631\u0627\u0631\u0629 \u0627\u0644\u0634\u0645\u0633"
+  originalText: "\u0627\u0641\u062D\u0635\u0648\u0627 \u062F\u0631\u062C\u0629 \u0627\u0644\u062D\u0631\u0627\u0631\u0629
+    \u0639\u0644\u0649 \u0627\u0644\u0634\u0645\u0633"
   fixTags: 1
   forceFix: 0
 --- !u!222 &50568270
@@ -2679,7 +2679,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &465981746
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2923,9 +2923,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uFE97\uFEAE\uFEDB\uFBFF\uFE90 \uFE8D\uFEDF\uFEB8\uFEE4\uFEB2 \uFEEB\uFEEE
-    %47 \uFEEB\uFBFF\uFEAA\uFEAD\uFEED\uFE9F\uFBFF\uFEE6\u060C %42 \uFEEB\uFBFF\uFEE0\uFBFF\uFEEE\uFEE1\u060C
-    \uFEED%1 \uFECB\uFEE8\uFE8E\uFEBB\uFEAE \uFE9B\uFED8\uFBFF\uFEE0\uFE94"
+  m_text: "\uFE97\uFEAE\uFEDB\uFBFF\uFE90 \uFE8D\uFEDF\uFEB8\uFEE4\uFEB2: %47 \uFEEB\uFBFF\uFEAA\uFEAD\uFEED\uFE9F\uFBFF\uFEE6\u060C,
+    %42 \uFEEB\uFBFF\uFEE0\uFBFF\uFEEE\uFEE1, %1 \uFECB\uFEE8\uFE8E\uFEBB\uFEAE \uFE9B\uFED8\uFBFF\uFEE0\uFE94\r\n"
   m_isRightToLeft: 1
   m_fontAsset: {fileID: 11400000, guid: 9883c91e6b61c30428aaede25e65b578, type: 2}
   m_sharedMaterial: {fileID: 221880842483487995, guid: 9883c91e6b61c30428aaede25e65b578, type: 2}
@@ -2998,9 +2997,9 @@ MonoBehaviour:
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
   preserveNumbers: 1
   farsi: 1
-  originalText: "\u062A\u0631\u0643\u064A\u0628 \u0627\u0644\u0634\u0645\u0633 \u0647\u0648
-    74% \u0647\u064A\u062F\u0631\u0648\u062C\u064A\u0646\u060C 24% \u0647\u064A\u0644\u064A\u0648\u0645\u060C
-    \u06481% \u0639\u0646\u0627\u0635\u0631 \u062B\u0642\u064A\u0644\u0629"
+  originalText: "\u062A\u0631\u0643\u064A\u0628 \u0627\u0644\u0634\u0645\u0633: 74%
+    \u0647\u064A\u062F\u0631\u0648\u062C\u064A\u0646\u060C, 24% \u0647\u064A\u0644\u064A\u0648\u0645,
+    1% \u0639\u0646\u0627\u0635\u0631 \u062B\u0642\u064A\u0644\u0629\r\n"
   fixTags: 1
   forceFix: 0
 --- !u!1 &619394800
@@ -5081,7 +5080,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "The Sun\u2019s composition is 74% hydrogen, 24% helium, and 1% heavy elements"
+  m_text: 'The composition of the Sun: 74% hydrogen, 24% helium, 1% heavy elements
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 54ac8b55fdb41eb46bdc9f6909973ee2, type: 2}
   m_sharedMaterial: {fileID: 2449554195858161683, guid: 54ac8b55fdb41eb46bdc9f6909973ee2, type: 2}
@@ -5354,8 +5355,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u05D1\u05D3\u05E7\u05D5 \u05D0\u05EA \u05D8\u05DE\u05E4\u05E8\u05D8\u05D5\u05E8\u05EA
-    \u05D4\u05E9\u05DE\u05E9"
+  m_text: "\u05D1\u05D3\u05E7\u05D5 \u05D0\u05EA \u05D4\u05D8\u05DE\u05E4\u05E8\u05D8\u05D5\u05E8\u05D4
+    \u05E2\u05DC \u05E4\u05E0\u05D9 \u05D4\u05E9\u05DE\u05E9"
   m_isRightToLeft: 1
   m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
@@ -5428,8 +5429,8 @@ MonoBehaviour:
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
   preserveNumbers: 1
   farsi: 0
-  originalText: "\u05D1\u05D3\u05E7\u05D5 \u05D0\u05EA \u05D8\u05DE\u05E4\u05E8\u05D8\u05D5\u05E8\u05EA
-    \u05D4\u05E9\u05DE\u05E9"
+  originalText: "\u05D1\u05D3\u05E7\u05D5 \u05D0\u05EA \u05D4\u05D8\u05DE\u05E4\u05E8\u05D8\u05D5\u05E8\u05D4
+    \u05E2\u05DC \u05E4\u05E0\u05D9 \u05D4\u05E9\u05DE\u05E9"
   fixTags: 1
   forceFix: 0
 --- !u!222 &1286052895
@@ -6115,7 +6116,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1469188940
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6315,7 +6316,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1536643134
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7164,7 +7165,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1736685559
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7720,7 +7721,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1805837173
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8319,7 +8320,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 572, y: 356}
+  m_AnchoredPosition: {x: 572, y: 374}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1869661152
@@ -8342,7 +8343,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Check the sun\u2019s temperature"
+  m_text: 'Check the temperature on the surface of the sun
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 2e498d1c8094910479dc3e1b768306a4, type: 2}
@@ -8369,8 +8372,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

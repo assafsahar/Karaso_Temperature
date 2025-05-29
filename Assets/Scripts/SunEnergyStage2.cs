@@ -88,7 +88,7 @@ public class SunEnergyStage2 : MonoBehaviour
     private void ShowStage3()
     {
         tempCheckText.SetActive(true);
-        tempCheckText.transform.localPosition = new Vector3(tempCheckText.transform.localPosition.x, -60f, tempCheckText.transform.localPosition.z);
+        tempCheckText.transform.localPosition = new Vector3(tempCheckText.transform.localPosition.x, -59f, tempCheckText.transform.localPosition.z);
         //tempCheckText.transform.localScale = Vector3.one * 0.7f;
         //tempCheckText.transform.DOScale(1f, 0.4f).SetEase(Ease.OutBack);
 
