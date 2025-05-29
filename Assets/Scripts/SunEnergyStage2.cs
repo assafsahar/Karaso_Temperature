@@ -99,6 +99,10 @@ public class SunEnergyStage2 : MonoBehaviour
         redBoxCanvasGroup.DOFade(1f, 0.7f);
         questionMark2.gameObject.SetActive(true);
         questionMark1.gameObject.SetActive(false);
+        if (bigAtomsAnimation != null)
+        {
+            bigAtomsAnimation.ShowInitialAtoms();
+        }
     }
     private void OnQuestionMark2Clicked()
     {

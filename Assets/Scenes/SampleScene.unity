@@ -1011,7 +1011,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &197347280
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2638,6 +2638,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   particleSystem: {fileID: 946644678}
+  atom1: {fileID: 433584320}
+  atom2: {fileID: 1217227110}
 --- !u!95 &462938663
 Animator:
   serializedVersion: 7
