@@ -40,6 +40,8 @@ public class SunEnergyStage2 : MonoBehaviour
     }
     private void Start()
     {
+        redBoxCanvasGroup.alpha = 0f;
+
         bar1.value = 0.5f;
         bar2.value = 0.5f;
         bar3.value = 0.5f;
@@ -86,16 +88,17 @@ public class SunEnergyStage2 : MonoBehaviour
     private void ShowStage3()
     {
         tempCheckText.SetActive(true);
-        tempCheckText.transform.localScale = Vector3.one * 0.7f;
-        tempCheckText.transform.DOScale(1f, 0.4f).SetEase(Ease.OutBack);
+        tempCheckText.transform.localPosition = new Vector3(tempCheckText.transform.localPosition.x, -60f, tempCheckText.transform.localPosition.z);
+        //tempCheckText.transform.localScale = Vector3.one * 0.7f;
+        //tempCheckText.transform.DOScale(1f, 0.4f).SetEase(Ease.OutBack);
 
         questionMark1.gameObject.SetActive(true);
     }
 
     private void OnQuestionMark1Clicked()
     {
-        redBoxText.SetActive(true);
-        redBoxCanvasGroup.alpha = 0f;
+        //redBoxText.SetActive(true);
+       
         redBoxCanvasGroup.DOFade(1f, 0.7f);
         questionMark2.gameObject.SetActive(true);
         questionMark1.gameObject.SetActive(false);
@@ -107,7 +110,7 @@ public class SunEnergyStage2 : MonoBehaviour
     private void OnQuestionMark2Clicked()
     {
         questionMark2.gameObject.SetActive(false);
-        redBoxText.SetActive(false);
+        redBoxCanvasGroup.alpha = 0f;
 
         // Play the atom animation
         if (bigAtomsAnimation != null)
