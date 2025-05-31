@@ -28,6 +28,7 @@ public class SunEnergyStage2 : MonoBehaviour
     [SerializeField] CanvasGroup redBoxCanvasGroup;
 
     private CanvasGroup infoTextCanvasGroup;
+    private BreathingText[] InfoTextsBoxes;
 
     private void Awake()
     {
@@ -58,6 +59,8 @@ public class SunEnergyStage2 : MonoBehaviour
 
         questionMark1.onClick.AddListener(OnQuestionMark1Clicked);
         questionMark2.onClick.AddListener(OnQuestionMark2Clicked);
+
+         InfoTextsBoxes = infoText.GetComponentsInChildren<BreathingText>();
     }
 
     private void OnCheckClicked()
@@ -74,7 +77,7 @@ public class SunEnergyStage2 : MonoBehaviour
             infoTextCanvasGroup.alpha = 0f;
             infoTextCanvasGroup.DOFade(1f, 0.7f);
 
-            DOVirtual.DelayedCall(2f, () => {
+            DOVirtual.DelayedCall(0f, () => {
                 animationPanel.SetActive(true);
                 animationPanel.transform.DOScale(1f, 1f).SetEase(Ease.InOutCubic)
                     .OnComplete(() => {
@@ -86,13 +89,15 @@ public class SunEnergyStage2 : MonoBehaviour
     }
 
     private void ShowStage3()
-    {
-        tempCheckText.SetActive(true);
-        tempCheckText.transform.localPosition = new Vector3(tempCheckText.transform.localPosition.x, -59f, tempCheckText.transform.localPosition.z);
-        //tempCheckText.transform.localScale = Vector3.one * 0.7f;
-        //tempCheckText.transform.DOScale(1f, 0.4f).SetEase(Ease.OutBack);
+    { 
+      DOVirtual.DelayedCall(1f, () => {
+      tempCheckText.SetActive(true);
+    //  tempCheckText.transform.localPosition = new Vector3(tempCheckText.transform.localPosition.x, -59f, tempCheckText.transform.localPosition.z);
+    //tempCheckText.transform.localScale = Vector3.one * 0.7f;
+    //tempCheckText.transform.DOScale(1f, 0.4f).SetEase(Ease.OutBack);
 
-        questionMark1.gameObject.SetActive(true);
+       questionMark1.gameObject.SetActive(true);
+    });
     }
 
     private void OnQuestionMark1Clicked()
@@ -106,6 +111,8 @@ public class SunEnergyStage2 : MonoBehaviour
         {
             bigAtomsAnimation.ShowInitialAtoms();
         }
+        foreach (BreathingText infoTxt in InfoTextsBoxes)
+            infoTxt.StartFirstAnimation();
     }
     private void OnQuestionMark2Clicked()
     {
@@ -117,6 +124,8 @@ public class SunEnergyStage2 : MonoBehaviour
         {
             bigAtomsAnimation.PlayAnimation();
         }
+        foreach (BreathingText infoTxt in InfoTextsBoxes)
+            infoTxt.StartSecondAnimation();
     }
 
     private void StartAtomsAnimation()
