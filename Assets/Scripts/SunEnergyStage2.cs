@@ -92,9 +92,9 @@ public class SunEnergyStage2 : MonoBehaviour
     { 
       DOVirtual.DelayedCall(1f, () => {
       tempCheckText.SetActive(true);
-    //  tempCheckText.transform.localPosition = new Vector3(tempCheckText.transform.localPosition.x, -59f, tempCheckText.transform.localPosition.z);
-    //tempCheckText.transform.localScale = Vector3.one * 0.7f;
-    //tempCheckText.transform.DOScale(1f, 0.4f).SetEase(Ease.OutBack);
+    tempCheckText.transform.localPosition = new Vector3(-715f, -59f, tempCheckText.transform.localPosition.z);
+    tempCheckText.transform.localScale = Vector3.one * 0.7f;
+    tempCheckText.transform.DOScale(1f, 0.4f).SetEase(Ease.OutBack);
 
        questionMark1.gameObject.SetActive(true);
     });

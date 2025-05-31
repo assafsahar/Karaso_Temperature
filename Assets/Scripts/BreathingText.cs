@@ -125,9 +125,9 @@ public class BreathingText : MonoBehaviour
                 float displayTime = TextChangeFrequency - 2f * fadeDuration;
                 if (displayTime > 0f)
                     yield return new WaitForSeconds(displayTime);
-
-                // if( i < iterations - 1)
+           
                 // פייד אאוט
+                if ( i < toIndex - 1)
                 yield return StartCoroutine(Fade(1f, 0f, fadeDuration));
                 yield return new WaitForSeconds(0.5f); // זמן בין איטרציות
 
