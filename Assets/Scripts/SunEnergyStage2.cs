@@ -20,6 +20,7 @@ public class SunEnergyStage2 : MonoBehaviour
 
     [Header("Button")]
     [SerializeField] Button checkBtn;
+    [SerializeField] Button resetBtn;
 
     [Header("Stage 3 Elements")]
     [SerializeField] GameObject tempCheckText; 
@@ -53,6 +54,7 @@ public class SunEnergyStage2 : MonoBehaviour
         animationPanel.transform.localScale = Vector3.one * 0.1f;
 
         checkBtn.onClick.AddListener(OnCheckClicked);
+        resetBtn.onClick.AddListener(ResetStage);
 
         bar1.onValueChanged.AddListener((v) => percentageText1.text = Mathf.RoundToInt(v) + "%");
         bar2.onValueChanged.AddListener((v) => percentageText2.text = Mathf.RoundToInt(v) + "%");
@@ -63,6 +65,63 @@ public class SunEnergyStage2 : MonoBehaviour
 
          InfoTextsBoxes = infoText.GetComponentsInChildren<BreathingText>();
     }
+
+    public void ResetStage()
+    {
+        DOTween.Kill(bar1);
+        DOTween.Kill(bar2);
+        DOTween.Kill(bar3);
+        DOTween.Kill("ShowInfoText");
+        DOTween.Kill("PanelShow");
+        DOTween.Kill("PanelScale");
+
+        // Reset sliders
+        bar1.value = 0.5f;
+        bar2.value = 0.5f;
+        bar3.value = 0.5f;
+
+        // Reset percentage texts
+        percentageText1.text = Mathf.RoundToInt(bar1.value) + "%";
+        percentageText2.text = Mathf.RoundToInt(bar2.value) + "%";
+        percentageText3.text = Mathf.RoundToInt(bar3.value) + "%";
+
+        chemicalType1.text = "";
+        chemicalType2.text = "";
+
+        // Reset UI
+        infoText.SetActive(false);
+        if (infoTextCanvasGroup != null)
+            infoTextCanvasGroup.alpha = 0f;
+        animationPanel.transform.localScale = Vector3.one * 0.1f;
+        animationPanel.SetActive(false);
+
+        checkBtn.interactable = true;
+        checkBtn.gameObject.SetActive(true);
+
+        tempCheckText.SetActive(false);
+        questionMark1.gameObject.SetActive(false);
+        questionMark2.gameObject.SetActive(false);
+        redBoxCanvasGroup.alpha = 0f;
+
+        // Reset breathing texts
+        foreach (BreathingText infoTxt in InfoTextsBoxes)
+        {
+            infoTxt.Stopanimation();
+            infoTxt.IsActive = false;
+        }
+
+        // Reset big atoms animation
+        if (bigAtomsAnimation != null)
+        {
+            bigAtomsAnimation.StopAllSequences();
+        }
+
+        foreach (var atom in animationPanel.GetComponentsInChildren<AtomAnimation>())
+        {
+            atom.StopFloating();
+        }
+    }
+
 
     private void OnCheckClicked()
     {
@@ -83,12 +142,13 @@ public class SunEnergyStage2 : MonoBehaviour
             DOVirtual.DelayedCall(0f, () => {
                 animationPanel.SetActive(true);
                 animationPanel.transform.DOScale(1f, 1f).SetEase(Ease.InOutCubic)
+                .SetId("PanelScale")
                     .OnComplete(() => {
                         ShowStage3();
                         StartAtomsAnimation();
                     });
-            });
-        });
+            }).SetId("PanelShow");
+        }).SetId("ShowInfoText");
     }
 
     private void ShowStage3()
@@ -141,4 +201,5 @@ public class SunEnergyStage2 : MonoBehaviour
             atom.StartFloating();
         }
     }
+
 }

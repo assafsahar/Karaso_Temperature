@@ -79,7 +79,11 @@ public class BreathingText : MonoBehaviour
     {
         isTimerStopped = true;
         stop = true;
-        StopCoroutine(fadeCoroutine);
+        if (fadeCoroutine != null)
+        {
+            StopCoroutine(fadeCoroutine);
+            fadeCoroutine = null;
+        }
     }
 
 

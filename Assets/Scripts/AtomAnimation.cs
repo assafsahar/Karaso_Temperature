@@ -29,6 +29,12 @@ public class AtomAnimation : MonoBehaviour
         }
     }
 
+    public void StopFloating()
+    {
+        isFloating = false;
+        DOTween.Kill(transform); // Stop any running tweens on this atom
+    }
+
     void MoveToRandomPosition()
     {
         if (!isFloating || areaCollider == null)

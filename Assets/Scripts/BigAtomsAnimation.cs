@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Xml.Serialization;
 using UnityEngine;
@@ -11,9 +12,12 @@ public class BigAtomsAnimation : MonoBehaviour
     [SerializeField] SpriteRenderer lowerAtom2;
     [SerializeField] float fistPauseDuration = 10f; // Duration of the first pause in seconds
     [SerializeField] float secondPauseDuration = 5f; // Duration of the second pause in seconds
+    [SerializeField] SunEnergyStage2 sunEnergyStage2;
+
 
     Animator animator;
     float animationLength;
+    private Coroutine sequenceCoroutine;
 
     private void Awake()
     {
@@ -51,7 +55,29 @@ public class BigAtomsAnimation : MonoBehaviour
     }
     public void PlaySequence()
     {
-        StartCoroutine(PlaySequenceCoroutine());
+        //StopAllSequences();
+        sequenceCoroutine = StartCoroutine(PlaySequenceCoroutine());
+    }
+
+    public void StopAllSequences()
+    {
+        if (sequenceCoroutine != null)
+        {
+            StopCoroutine(sequenceCoroutine);
+            sequenceCoroutine = null;
+        }
+        CancelInvoke();
+        DOTween.Kill(upperAtom1.transform);
+        DOTween.Kill(upperAtom2.transform);
+        DOTween.Kill(lowerAtom1.transform);
+        DOTween.Kill(lowerAtom2.transform);
+        // Hide all atoms
+        if (upperAtom1 != null) upperAtom1.gameObject.SetActive(false);
+        if (upperAtom2 != null) upperAtom2.gameObject.SetActive(false);
+        if (lowerAtom1 != null) lowerAtom1.gameObject.SetActive(false);
+        if (lowerAtom2 != null) lowerAtom2.gameObject.SetActive(false);
+        SetAtomsOff();
+        if (particleSystem != null) particleSystem.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
     }
 
     IEnumerator PlaySequenceCoroutine()
@@ -74,6 +100,10 @@ public class BigAtomsAnimation : MonoBehaviour
 
         // Back to initial state
         SetAtomsOff();
+
+        // Reset the whole application
+        if (sunEnergyStage2 != null)
+            sunEnergyStage2.ResetStage();
     }
     private void SetAtomsOff()
     {
