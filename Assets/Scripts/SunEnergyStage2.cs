@@ -11,6 +11,7 @@ public class SunEnergyStage2 : MonoBehaviour
     [SerializeField] Slider bar3;
     [SerializeField] float barFillDuration = 1.2f;
     [SerializeField] TextMeshProUGUI percentageText1, percentageText2, percentageText3;
+    [SerializeField] TextMeshProUGUI chemicalType1, chemicalType2;
 
     [Header("UI Elements")]
     [SerializeField] GameObject infoText;
@@ -65,6 +66,8 @@ public class SunEnergyStage2 : MonoBehaviour
 
     private void OnCheckClicked()
     {
+        
+
         checkBtn.interactable = false; 
         checkBtn.gameObject.SetActive(false);
 
@@ -89,15 +92,19 @@ public class SunEnergyStage2 : MonoBehaviour
     }
 
     private void ShowStage3()
-    { 
-      DOVirtual.DelayedCall(1f, () => {
-      tempCheckText.SetActive(true);
-    tempCheckText.transform.localPosition = new Vector3(-715f, -59f, tempCheckText.transform.localPosition.z);
-    tempCheckText.transform.localScale = Vector3.one * 0.7f;
-    tempCheckText.transform.DOScale(1f, 0.4f).SetEase(Ease.OutBack);
+    {
+        chemicalType1.text = "H";
+        chemicalType2.text = "He";
+        DOVirtual.DelayedCall(1f, () => {
+          tempCheckText.SetActive(true);
+          tempCheckText.transform.localPosition = new Vector3(-715f, -59f, tempCheckText.transform.localPosition.z);
+          /*tempCheckText.transform.localScale = Vector3.one * 0.7f;
+          tempCheckText.transform.DOScale(1f, 0.4f).SetEase(Ease.OutBack);*/
 
-       questionMark1.gameObject.SetActive(true);
-    });
+          questionMark1.gameObject.SetActive(true);
+
+          
+      });
     }
 
     private void OnQuestionMark1Clicked()
@@ -107,10 +114,6 @@ public class SunEnergyStage2 : MonoBehaviour
         redBoxCanvasGroup.DOFade(1f, 0.7f);
         questionMark2.gameObject.SetActive(true);
         questionMark1.gameObject.SetActive(false);
-        if (bigAtomsAnimation != null)
-        {
-            bigAtomsAnimation.ShowInitialAtoms();
-        }
         foreach (BreathingText infoTxt in InfoTextsBoxes)
             infoTxt.StartFirstAnimation();
     }
@@ -122,11 +125,13 @@ public class SunEnergyStage2 : MonoBehaviour
         // Play the atom animation
         if (bigAtomsAnimation != null)
         {
-            bigAtomsAnimation.PlayAnimation();
+            bigAtomsAnimation.ShowInitialAtoms();
+            bigAtomsAnimation.Invoke("PlaySequence", 6);
         }
         foreach (BreathingText infoTxt in InfoTextsBoxes)
             infoTxt.StartSecondAnimation();
     }
+
 
     private void StartAtomsAnimation()
     {
