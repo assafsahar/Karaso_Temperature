@@ -1,7 +1,8 @@
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 using TMPro;
+using UnityEngine.Audio;
 
 public class SunEnergyStage2 : MonoBehaviour
 {
@@ -125,21 +126,47 @@ public class SunEnergyStage2 : MonoBehaviour
 
     private void OnCheckClicked()
     {
-        
 
+        SoundManager.Instance.PlaySFX(SFX.Ping);
         checkBtn.interactable = false; 
         checkBtn.gameObject.SetActive(false);
 
-        bar1.DOValue(74f, barFillDuration).SetEase(Ease.OutBounce);
-        bar2.DOValue(24f, barFillDuration).SetEase(Ease.OutBounce).SetDelay(0.2f);
-        bar3.DOValue(1f, barFillDuration).SetEase(Ease.OutBounce).SetDelay(0.2f);
 
-        DOVirtual.DelayedCall(0.5f, () => {
+        bar1.DOValue(74f, barFillDuration)
+      .SetEase(Ease.OutBounce)
+        .OnStart(() =>
+        {
+          SoundManager.Instance.PlaySFX(SFX.BarWoosh); // סאונד ל־bar1
+      });
+
+        bar2.DOValue(24f, barFillDuration)
+            .SetEase(Ease.OutBounce)
+            .SetDelay(0.2f)
+            .OnStart(() =>
+            {
+                SoundManager.Instance.PlaySFX(SFX.BarWoosh); // סאונד ל־bar1
+            });
+
+        bar3.DOValue(1f, barFillDuration)
+            .SetEase(Ease.OutBounce)
+            .SetDelay(0.3f)
+            .OnStart(() =>
+            {
+                SoundManager.Instance.PlaySFX(SFX.BarWoosh); // סאונד ל־bar1
+            });
+
+        DOVirtual.DelayedCall(0.7f, () => {
+          
             infoText.SetActive(true);
             infoTextCanvasGroup.alpha = 0f;
-            infoTextCanvasGroup.DOFade(1f, 0.7f);
+            infoTextCanvasGroup.DOFade(1f, 0.7f)
+            .OnStart(() =>
+            {
+                SoundManager.Instance.PlaySFX(SFX.Woosh); // סאונד ל־bar1
+            });
 
             DOVirtual.DelayedCall(0f, () => {
+               // SoundManager.Instance.PlaySFX(SFX.Woosh);
                 animationPanel.SetActive(true);
                 animationPanel.transform.DOScale(1f, 1f).SetEase(Ease.InOutCubic)
                 .SetId("PanelScale")
@@ -153,11 +180,13 @@ public class SunEnergyStage2 : MonoBehaviour
 
     private void ShowStage3()
     {
+        
         chemicalType1.text = "H";
         chemicalType2.text = "He";
         DOVirtual.DelayedCall(1f, () => {
           tempCheckText.SetActive(true);
-          tempCheckText.transform.localPosition = new Vector3(-715f, -59f, tempCheckText.transform.localPosition.z);
+            SoundManager.Instance.PlaySFX(SFX.Woosh);
+            tempCheckText.transform.localPosition = new Vector3(-715f, -59f, tempCheckText.transform.localPosition.z);
           /*tempCheckText.transform.localScale = Vector3.one * 0.7f;
           tempCheckText.transform.DOScale(1f, 0.4f).SetEase(Ease.OutBack);*/
 
@@ -170,7 +199,7 @@ public class SunEnergyStage2 : MonoBehaviour
     private void OnQuestionMark1Clicked()
     {
         //redBoxText.SetActive(true);
-       
+        SoundManager.Instance.PlaySFX(SFX.Ping);
         redBoxCanvasGroup.DOFade(1f, 0.7f);
         questionMark2.gameObject.SetActive(true);
         questionMark1.gameObject.SetActive(false);
@@ -179,6 +208,7 @@ public class SunEnergyStage2 : MonoBehaviour
     }
     private void OnQuestionMark2Clicked()
     {
+        SoundManager.Instance.PlaySFX(SFX.Ping);
         questionMark2.gameObject.SetActive(false);
         redBoxCanvasGroup.alpha = 0f;
 
@@ -187,6 +217,7 @@ public class SunEnergyStage2 : MonoBehaviour
         {
             bigAtomsAnimation.ShowInitialAtoms();
             bigAtomsAnimation.Invoke("PlaySequence", 6);
+            SoundManager.Instance.PlaySFX(SFX.Woosh);
         }
         foreach (BreathingText infoTxt in InfoTextsBoxes)
             infoTxt.StartSecondAnimation();

@@ -52,6 +52,7 @@ public class BigAtomsAnimation : MonoBehaviour
     public void PlayEffect()
     {
         particleSystem.Play();
+        SoundManager.Instance.PlaySFX(SFX.Explosion);
     }
     public void PlaySequence()
     {

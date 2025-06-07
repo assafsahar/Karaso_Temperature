@@ -4401,6 +4401,61 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 959121236}
   m_CullTransparentMesh: 1
+--- !u!1 &994212964
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 994212966}
+  - component: {fileID: 994212965}
+  m_Layer: 0
+  m_Name: SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &994212965
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 994212964}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ca423210a82b624ea39b8a12ed39431, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - soundType: 0
+    clip: {fileID: 8300000, guid: 2cc134b7e4ceadb45b21d10deed528ef, type: 3}
+  - soundType: 1
+    clip: {fileID: 8300000, guid: abe0df5dfc34f4345a642e130e6a137d, type: 3}
+  - soundType: 2
+    clip: {fileID: 8300000, guid: fb1f7bff38f2bc54bb0e2eb349f2e422, type: 3}
+  - soundType: 3
+    clip: {fileID: 8300000, guid: 88a4df7a08daf694c864974767494cd7, type: 3}
+  - soundType: 4
+    clip: {fileID: 8300000, guid: 76549a718590be14f81d1f303007fd0e, type: 3}
+--- !u!4 &994212966
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 994212964}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 578.99896, y: 932.8474, z: -4.4371476}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1003828985
 GameObject:
   m_ObjectHideFlags: 0
@@ -9838,3 +9893,4 @@ SceneRoots:
   - {fileID: 1139744407}
   - {fileID: 1594635871}
   - {fileID: 1213704605}
+  - {fileID: 994212966}
