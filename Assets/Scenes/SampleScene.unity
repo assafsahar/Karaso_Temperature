@@ -4438,7 +4438,7 @@ MonoBehaviour:
   - soundType: 2
     clip: {fileID: 8300000, guid: fb1f7bff38f2bc54bb0e2eb349f2e422, type: 3}
   - soundType: 3
-    clip: {fileID: 8300000, guid: 88a4df7a08daf694c864974767494cd7, type: 3}
+    clip: {fileID: 8300000, guid: c12dfc0387f64de4ebed827375613054, type: 3}
   - soundType: 4
     clip: {fileID: 8300000, guid: 76549a718590be14f81d1f303007fd0e, type: 3}
 --- !u!4 &994212966

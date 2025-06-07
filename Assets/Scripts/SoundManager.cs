@@ -56,7 +56,7 @@ public class SoundManager : MonoBehaviour
         if (soundDict.TryGetValue(soundType, out AudioClip clip))
         {
             Debug.Log("Playing sound: " + soundType + ", clip: " + clip.name);
-            sfxSource.PlayOneShot(clip);
+            sfxSource.PlayOneShot(clip,volume);
       
 
         }
