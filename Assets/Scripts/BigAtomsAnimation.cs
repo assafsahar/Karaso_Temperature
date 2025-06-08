@@ -47,7 +47,7 @@ public class BigAtomsAnimation : MonoBehaviour
     {
         animator.Play("BigAtoms", 0, 0f);
         animator.speed = 1f;
-       
+        SoundManager.Instance.PlaySFX(SFX.Woosh);
     }
     public void PlayEffect()
     {

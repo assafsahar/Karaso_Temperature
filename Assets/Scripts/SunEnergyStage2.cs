@@ -185,7 +185,7 @@ public class SunEnergyStage2 : MonoBehaviour
         chemicalType2.text = "He";
         DOVirtual.DelayedCall(1f, () => {
           tempCheckText.SetActive(true);
-            SoundManager.Instance.PlaySFX(SFX.Woosh);
+            //SoundManager.Instance.PlaySFX(SFX.Woosh);
             tempCheckText.transform.localPosition = new Vector3(-715f, -59f, tempCheckText.transform.localPosition.z);
           /*tempCheckText.transform.localScale = Vector3.one * 0.7f;
           tempCheckText.transform.DOScale(1f, 0.4f).SetEase(Ease.OutBack);*/
@@ -217,7 +217,7 @@ public class SunEnergyStage2 : MonoBehaviour
         {
             bigAtomsAnimation.ShowInitialAtoms();
             bigAtomsAnimation.Invoke("PlaySequence", 6);
-            SoundManager.Instance.PlaySFX(SFX.Woosh);
+            
         }
         foreach (BreathingText infoTxt in InfoTextsBoxes)
             infoTxt.StartSecondAnimation();
